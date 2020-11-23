@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import Home from './views/Home'
+import Game from './views/Game'
+import Settings from './views/Settings'
+import DifficultyContext from './contexts/DifficultyContext'
+import difficultyEnum from './enums/difficultyEnum'
+import BgVideo from './components/BgVideo'
+import History from './views/History'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [difficulty, setDifficulty] = useState(difficultyEnum.EASY)
+
+    return (
+        <DifficultyContext.Provider value={{
+            difficulty,
+            setDifficulty
+        }}>
+            <BgVideo />
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path='/'>
+                        <Home />
+                    </Route>
+                    <Route path='/game'>
+                        <Game />
+                    </Route>
+                    <Route path='/settings'>
+                        <Settings />
+                    </Route>
+                    <Route path='/history'>
+                        <History />
+                    </Route>
+                </Switch>
+            </BrowserRouter>
+        </DifficultyContext.Provider>
+    )
 }
 
-export default App;
+export default App

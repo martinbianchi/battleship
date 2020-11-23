@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+.menu {
+    width: 40%;
+    list-style: none;
+    padding: 3rem;
+    background-color: rgba($color-primary-light, 0.5);
+    border-radius: 5px;
+    margin-top: 3rem;
+    li:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+}

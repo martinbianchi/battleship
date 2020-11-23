@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+
+.input {
+    display: none;
+}
+
+.inputLabel {
+    padding: 1rem 1.5rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.inputContainer {
+    border: none;
+    color: #fff;
+    transform: skewX(-15deg);
+    font-family: inherit;
+    font-size: 2rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+    border: 3px solid $color-secondary;
+    background: rgba(#747474, 0.65);
+    text-align: center;
+
+    &.selected {
+        background-color: $color-secondary;
+
+        &:hover {
+            background: $color-secondary;
+            color: #fff;
+            transform: skewX(-15deg);
+            box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    label {
+        display: inline-block;
+        transform: skewX(15deg);
+    }
+
+    &:hover {
+        transform: skewX(-15deg) translateY(-2px);
+        box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.2);
+        background: $color-secondary-light;
+        color: $color-primary-dark;
+    }
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    &:active {
+        border: 3px solid $color-secondary;
+        outline: none;
+        transform: skewX(-15deg) translateY(0px);
+        box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+    }
+}

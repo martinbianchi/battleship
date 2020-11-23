@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: rgba($color-secondary-light, 0.8);
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-family: $font-family-primary;
+    font-size: 2rem;
+    color: $color-primary;
+}
+
+.statisticContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.statisticSection {
+    flex: 50%;
+}
+
+.statistic {
+    font-weight: bold;
+
+    span {
+        font-size: 1.4rem;
+        font-weight: normal;
+    }
+}
+
+.success {
+    color: rgb(43, 168, 74);
+}
+
+.failure {
+    color: orangered;
+}

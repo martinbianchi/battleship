@@ -1,0 +1,11 @@
+@import "../../styles/mixins";
+
+.history {
+    @include positionViewCenterTop;
+}
+
+.games {
+    height: 70%;
+    width: 60%;
+    overflow: auto;
+}

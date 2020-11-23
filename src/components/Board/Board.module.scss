@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+
+.board {
+    display: grid;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+    grid-template-rows: repeat(11, 1fr);
+    grid-template-columns: repeat(11, 1fr);
+}
+
+.coord {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    background: rgba($color-primary, 0.3);
+    color: $color-primary-dark;
+    font-weight: bold;
+}

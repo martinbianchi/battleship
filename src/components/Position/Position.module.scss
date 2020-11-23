@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.position {
+    padding: 1rem;
+    // background: #e2e2e2;
+    border: 1px solid #e3e3e3;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.initial {
+    background-image: linear-gradient(to right bottom, rgba(#858585, 0.9), rgba(#797878, 0.9));
+}
+
+.missed {
+    background-image: url(../../assets/missed.svg),
+        linear-gradient(to right bottom, rgba($color-primary, 0.9), rgba($color-primary, 0.7));
+    background-position: right;
+}
+
+.shoot {
+    background-image: url(../../assets/shoot.svg),
+        linear-gradient(to right bottom, rgba($color-secondary, 0.7), rgba(darken($color-secondary, 20%), 0.7));
+}
+
+.sunk {
+    background-image: url(../../assets/sink.svg),
+        linear-gradient(to right bottom, rgba(lighten(#5f0000, 20%), 0.9), rgba(#5f0000, 0.9));
+}
