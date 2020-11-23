@@ -19,9 +19,6 @@ const App = () => {
             <BgVideo />
             <BrowserRouter>
                 <Switch>
-                    <Route exact path='/'>
-                        <Home />
-                    </Route>
                     <Route path='/game'>
                         <Game />
                     </Route>
@@ -30,6 +27,9 @@ const App = () => {
                     </Route>
                     <Route path='/history'>
                         <History />
+                    </Route>
+                    <Route path='/'>
+                        <Home />
                     </Route>
                 </Switch>
             </BrowserRouter>

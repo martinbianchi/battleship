@@ -31,4 +31,4 @@ const Position = ({ status, onClick, column, row }) => {
     )
 }
 
-export default Position
+export default React.memo(Position)
