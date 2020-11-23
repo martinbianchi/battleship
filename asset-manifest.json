@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/battleship/static/css/main.2c18c917.chunk.css",
+    "main.js": "/battleship/static/js/main.71e3926b.chunk.js",
+    "main.js.map": "/battleship/static/js/main.71e3926b.chunk.js.map",
+    "runtime-main.js": "/battleship/static/js/runtime-main.4960465b.js",
+    "runtime-main.js.map": "/battleship/static/js/runtime-main.4960465b.js.map",
+    "static/js/2.3c9f3cb6.chunk.js": "/battleship/static/js/2.3c9f3cb6.chunk.js",
+    "static/js/2.3c9f3cb6.chunk.js.map": "/battleship/static/js/2.3c9f3cb6.chunk.js.map",
+    "static/js/3.c4896c11.chunk.js": "/battleship/static/js/3.c4896c11.chunk.js",
+    "static/js/3.c4896c11.chunk.js.map": "/battleship/static/js/3.c4896c11.chunk.js.map",
+    "index.html": "/battleship/index.html",
+    "static/css/main.2c18c917.chunk.css.map": "/battleship/static/css/main.2c18c917.chunk.css.map",
+    "static/js/2.3c9f3cb6.chunk.js.LICENSE.txt": "/battleship/static/js/2.3c9f3cb6.chunk.js.LICENSE.txt",
+    "static/media/Sail-Away.7edd268f.mp4": "/battleship/static/media/Sail-Away.7edd268f.mp4",
+    "static/media/Position.module.scss": "/battleship/static/media/sink.12e07038.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4960465b.js",
+    "static/js/2.3c9f3cb6.chunk.js",
+    "static/css/main.2c18c917.chunk.css",
+    "static/js/main.71e3926b.chunk.js"
+  ]
+}
