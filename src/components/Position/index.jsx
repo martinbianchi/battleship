@@ -25,7 +25,7 @@ const Position = ({ status, onClick, column, row }) => {
     }
  
     return (
-        <div onClick={onClick} style={positionInGrid} className={`${styles.position} ${getClass(status)}`}>
+        <div data-testid="position" onClick={onClick} style={positionInGrid} className={`${styles.position} ${getClass(status)}`}>
             &nbsp;
         </div>
     )
