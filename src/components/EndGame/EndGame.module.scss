@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .endGame {
     display: flex;
@@ -9,6 +10,10 @@
     background: rgba($color-primary, 0.3);
     border-radius: 5px;
 
+    @include respond(phone) {
+        padding: 2rem;
+    }
+
     &:not(:last-child) {
         margin-bottom: 1rem;
     }
@@ -17,6 +22,10 @@
 .message {
     font-size: 2.5rem;
     color: $color-primary-dark;
+    text-align: center;
+    @include respond(phone) {
+        font-size: 1.8rem;
+    }
 }
 
 .actions {

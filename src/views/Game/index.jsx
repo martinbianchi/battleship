@@ -88,8 +88,6 @@ const Game = () => {
 
       setTurn(turn => turn + 1)
     }
-
-    console.log(board)
   }
 
   const hasWon = () => sunkedShips === ships.length

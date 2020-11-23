@@ -1,8 +1,13 @@
 @import "./variables";
+@import "./mixins";
 
 .headline {
     font-size: 10rem;
     color: $color-primary-dark;
     font-family: $font-family-primary;
     font-weight: 100;
+
+    @include respond(phone) {
+        font-size: 4.5rem;
+    }
 }

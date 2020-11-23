@@ -5,7 +5,11 @@
 }
 
 .games {
-    height: 70%;
+    height: 100%;
     width: 60%;
     overflow: auto;
+
+    @include respond(tablet) {
+        width: 80%;
+    }
 }

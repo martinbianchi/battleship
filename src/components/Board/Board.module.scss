@@ -1,12 +1,24 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .board {
     display: grid;
     flex-wrap: wrap;
-    margin: 0 auto;
 
-    grid-template-rows: repeat(11, 1fr);
-    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(11, 7rem);
+    grid-template-columns: repeat(11, 7rem);
+
+    justify-content: center;
+
+    @include respond(tablet) {
+        grid-template-rows: repeat(11, 5rem);
+        grid-template-columns: repeat(11, 5rem);
+    }
+
+    @include respond(phone) {
+        grid-template-rows: repeat(11, 3.5rem);
+        grid-template-columns: repeat(11, 3.5rem);
+    }
 }
 
 .coord {

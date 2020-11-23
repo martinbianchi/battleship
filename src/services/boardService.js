@@ -27,15 +27,28 @@ const generateBoard = (dimX, dimY) => {
  * @returns {Array} board with the ships set randomly
  */
 const setShips = (board, ships) => {
-  const updatedBoard = deepCopy(board)
+  let updatedBoard = deepCopy(board)
   ships.forEach(ship => {
-    placeShip(updatedBoard, ship)
+    updatedBoard = placeShip(updatedBoard, ship)
   })
 
   return updatedBoard;
 }
 
+/**
+ * 
+ * @param {Array} board game board to modify
+ * @param {{id, shipLongitude}} ship Ship to place in board
+ * @param {number} intents Used to manage the recursivity of the function
+ * 
+ * @returns {Array} board with the ship placed.
+ */
 const placeShip = (board, ship, intents = 0) => {
+
+  if (intents === 30) {
+    // TODO: place ship manually
+  }
+
   const directions = [directionEnum.TOP, directionEnum.RIGHT, directionEnum.BOTTOM, directionEnum.LEFT];
   const posX = getRndInteger(0, board.length);
   const posY = getRndInteger(0, board[0].length);
@@ -44,14 +57,24 @@ const placeShip = (board, ship, intents = 0) => {
   const goThroughDirection = getGoThroughDirection(board, posX, posY, ship.shipLongitude, direction);
 
   if (goThroughDirection && canPlaceShip(goThroughDirection)) {
-    placeShipInBoard(goThroughDirection, board, ship.id)
-    return board
+    return placeShipInBoard(goThroughDirection, board, ship.id)
   } else {
     intents++;
     return placeShip(board, ship, intents)
   }
 }
 
+/**
+ * 
+ * @param {Array} board Game board
+ * @param {number} posX X-axis position of the ship
+ * @param {number} posY Y-axis position of the ship
+ * @param {number} shipLongitude longitude of the ship
+ * @param {directionsEnum} direction direction to place the ship
+ * 
+ * @returns {Function} Function that accepts a callback to execute on each position. 
+ * Take as basis posX and posY and go through the specific direction
+ */
 const getGoThroughDirection = (board, posX, posY, shipLongitude, direction) => {
   switch (direction) {
     case directionEnum.BOTTOM:
@@ -99,6 +122,12 @@ const getGoThroughDirection = (board, posX, posY, shipLongitude, direction) => {
   }
 }
 
+/**
+ * 
+ * @param {Function} goThroughDirection 
+ * 
+ * @returns {boolean} true if the ship can be placed in the position.
+ */
 const canPlaceShip = (goThroughDirection) => {
   let canPlace = true;
   goThroughDirection((x, y, position) => {
@@ -110,10 +139,21 @@ const canPlaceShip = (goThroughDirection) => {
   return canPlace
 }
 
+/**
+ * 
+ * @param {Function} goThroughDirection 
+ * @param {Array} board game board
+ * @param {string} id ship id
+ * 
+ * @returns {Array} updated board with the ship placed in it.
+ */
 const placeShipInBoard = (goThroughDirection, board, id) => {
+  let updatedBoard = deepCopy(board);
   goThroughDirection((posX, posY, _) => {
-    board[posX][posY] = { id, status: spaceStatusEnum.SEA }
+    updatedBoard[posX][posY] = { id, status: spaceStatusEnum.SEA }
   })
+
+  return updatedBoard;
 }
 
 export {

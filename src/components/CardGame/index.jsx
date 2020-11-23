@@ -35,4 +35,4 @@ const CardGame = ({startAt, finishAt, won, turns, numberGame}) => {
     )
 }
 
-export default CardGame
+export default React.memo(CardGame)
